@@ -7,7 +7,15 @@
 #include <string>
 #include <cstdint>
 #include <cstdlib>
+#include <thread>
 
-TEST_CASE("Not much yet", "test_play_tone") {
+#include "player.h"
+
+TEST_CASE("Playing a random noise tone", "player") {
+    player p(2, 44100);
+
+    // sleep for a second
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
 
 }

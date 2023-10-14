@@ -2,7 +2,9 @@ target_sources(synthengine
 PUBLIC
     lfo.h
     oscillator.h
+    player.h
 PRIVATE
     lfo.cpp
     oscillator.cpp
+    player.cpp
 )

@@ -25,11 +25,15 @@ endif()
 # add subdirectory /cmake/modules to the module path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake/modules")
 
-
+find_package(miniaudio REQUIRED)
 
 # defining the backbone of the application that is used by all wrappers 
 # does the actual work, everything else is just a wrapper around this
 add_library(synthengine STATIC "")
+
+target_include_directories(synthengine PUBLIC
+    ${miniaudio_INCLUDE_DIR}
+)
 
 add_subdirectory(src/)
 
